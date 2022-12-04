@@ -62,4 +62,27 @@ else:
     print(str(b//60) + ' ' + str(b%60))
 
 
-24 * 60
+# 2525번
+h,m = map(int, input().split())
+a = int(input())
+b = h * 60 + m + a
+if b >= 1440:
+    b-=1440
+    print(str(b//60) + ' ' + str(b%60))
+else:
+    print(str(b//60) + ' ' + str(b%60))
+
+# 2480번
+a = list(map(int, input().split()))
+b = list(set(a))
+if len(b)==1:
+    print(10000+b[0]*1000)
+elif len(b)==2:
+    c = 0
+    for i in range(2):
+        if a.count(b[i]) == 2:
+            c = b[i]
+    print(1000+c*100)
+else:
+    print(max(b)*100)
+
