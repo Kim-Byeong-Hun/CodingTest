@@ -41,9 +41,7 @@ else:
 
 # 2884번 모듈로 풀기(백준에서는 런타임오류)
 import datetime
-h,m = map(int, input().split())
-h_r = ''
-m_r = 0
+h, m = map(int, input().split())
 h_r = str(datetime.timedelta(hours=h, minutes=m) - datetime.timedelta(minutes=45)).split(':')[0]
 m_r = int(str(datetime.timedelta(hours=h, minutes=m) - datetime.timedelta(minutes=45)).split(':')[1])
 if len(h_r) >= 3:
@@ -85,4 +83,5 @@ elif len(b)==2:
     print(1000+c*100)
 else:
     print(max(b)*100)
+
 
