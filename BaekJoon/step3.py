@@ -83,24 +83,23 @@ while True:
         break
 
 # 1110번
-a = input()
-b = 0
-i = []
-if int(a) < 10:
-    a = '0' + a
-
+a = int(input())
+b = ''
+if len(str(a)) < 2:
+    b = '0' + str(a)
+else:
+    b = str(a)
+c = [b]
 while True:
-    if len(i) == 0:
-        i += [a[-1] + str(int(a[0]) + int(a[1]))]
-    else:
-        i += [i[b-1][-1] + str(int(i[b-1][0]) + int(i[b-1][1]))]
-
-    if a == i[-1]:
-        print(len(i))
+    d = int(b[0]) + int(b[1])
+    e = b[1]+str(d)[-1]
+    c += [e]
+    if c[0] == c[-1]:
         break
-    b += 1
-
-# i에 결과를 넣자
-# i의 길이를 출력하면되겠네
-# i의 마지막 
+    else:
+        if len(e) < 2:
+            b = '0' + e
+        else:
+            b = e
+print(len(c)-1)
 
