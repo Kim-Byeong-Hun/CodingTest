@@ -88,13 +88,23 @@ for i in d:
     e += i
 print(sum(c) + len(e))
 
-# 1316번
+# 1316번 ☆☆☆☆☆☆☆☆☆☆☆
 import re
 a = int(input())
 b = []
 e = 0
 for i in range(a):
     b.append(input())
+
 for i in b:
-    for j in i:
-        
+    d = []
+    for j in range(len(i)):
+        if i[j] not in d:
+            d.append(i[j]) # EX) d = ['h','a','p','y']
+        else:
+            if (j - d.index(i[j])) == 1:
+                del d[d.index(i[j])]
+                d.append(i[j])
+        if len(i) == len(d):
+            e += 1
+print(e)
