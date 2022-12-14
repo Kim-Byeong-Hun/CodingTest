@@ -19,7 +19,7 @@ a = int(input())
 
 def search_fraction(x):
     line = 0 # 1 2 3 4
-    max_num = 0 # 1 3 6 10
+    max_num = 0 # 1 3 6 10                 -> 1,2,3--- 씩 늘어나는 숫자 만들기 위한 방법!(구조 이해하기)
     while max_num < x:
         line += 1               #라인을 찾기 위해
         max_num += line         #라인에서의 최대값을 찾기 위해
@@ -35,3 +35,19 @@ def search_fraction(x):
     print('%d/%d' % (top, under))
 
 search_fraction(a)
+
+# 2869번 
+import math
+a,b,v = map(int, input().split())
+
+day_up = a - b
+all_diff = v - a
+
+
+if all_diff + a > v:
+    int(math.ceil(v/day_up))
+else:
+    int(math.ceil(v/day_up))
+
+
+# 수학적인 사고는 아직 부족하기 때문에 우선 다른 문제 진행하고 수학적으로 막히면 기본수학문제 많이 풀기
