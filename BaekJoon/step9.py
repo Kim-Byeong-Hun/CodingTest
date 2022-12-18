@@ -46,10 +46,13 @@ e = []
 for i in c:
     for j in range(0, 10):
         e.append(i+j)
-c
+
 
 f = []
 for i in d:
     for j in range(0,11):
         f.append(i+j)
-(len(e) - len(list(set(e)))-1) * (len(f) - len(list(set(f)))-1)
+
+len(list(set(f)))
+len(list(set(e)))
+
