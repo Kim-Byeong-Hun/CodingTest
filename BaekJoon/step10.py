@@ -117,3 +117,28 @@ d = sorted(c)
 d.sort(key=lambda x:(len(x)))
 for i in d:
     print(i)
+
+# 10814번
+a = int(input())
+b = []
+for i in range(a):
+    b.append(input().split())
+b.sort(key=lambda x:int(x[0]))
+for i in b:
+    for j in i:
+        print(j, end=' ')
+    print()
+
+# 18870번
+import sys
+a = int(input())
+b = list(map(int, sys.stdin.readline().rstrip().split()))
+c = list(set(b))
+c.sort()
+d = dict()
+for i in range(len(c)):
+    d[c[i]] = i
+
+for i in b:
+    print(d[i], end=' ')
+    
