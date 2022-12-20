@@ -50,27 +50,27 @@ for i in range(len(b)):
         for j in range(b[i]):
             print(i)
 
-# 2108번 ☆☆☆☆☆☆☆☆☆☆
+# 2108번
 import sys
 a = int(input())
 b = []
 for i in range(a):
     b.append(int(sys.stdin.readline().rstrip()))
 
-print(int(sum(b)/a)) # 산술평균
+print(round(sum(b)/a)) # 산술평균
 
 c = sorted(b)
 print(c[a//2]) # 중앙값
 
-d = []
-for i in c:
-    d.append(c.count(i))
-e = []
-for i in range(len(d)):
-    if d[i] == max(d):
-        e.append(c[i])
-if len(e) >= 2:
-    print(e[1]) # 최빈값
+from collections import Counter
+d = Counter(c)
+if len(d) >= 2:
+    if d.most_common()[0][1] == d.most_common()[1][1]:
+        print(d.most_common()[1][0])
+    else:
+        print(d.most_common()[0][0])
+else:
+    print(d.most_common()[0][0])
 
 print(c[-1]-c[0]) # 범위
 
