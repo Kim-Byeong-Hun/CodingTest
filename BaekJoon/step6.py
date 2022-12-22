@@ -18,6 +18,7 @@ for i in b:
 
 # 2675번
 import sys
+
 a = int(input())
 for i in range(a):
     c = ''
@@ -89,22 +90,27 @@ for i in d:
 print(sum(c) + len(e))
 
 # 1316번 ☆☆☆☆☆☆☆☆☆☆☆
-import re
+import numpy as np
+
 a = int(input())
 b = []
-e = 0
 for i in range(a):
     b.append(input())
-
+o = 0
 for i in b:
-    d = []
+    c = []
     for j in range(len(i)):
-        if i[j] not in d:
-            d.append(i[j]) # EX) d = ['h','a','p','y']
-        else:
-            if (j - d.index(i[j])) == 1:
-                del d[d.index(i[j])]
-                d.append(i[j])
-        if len(i) == len(d):
-            e += 1
-print(e)
+        c.append(i[j])
+    d = np.array(c)
+    e = list(set(c))
+    for v in e:
+        f = np.where(d == v)[0]
+        if len(f) >= 2:
+            y = len(f)
+            while y >= 2:
+                if f[y-1] - f[y-2] == 1:
+                    continue
+                else:
+                    o += 1
+                    break
+                y -= 1
