@@ -50,3 +50,28 @@ for i in range(t):
     cnt = [0]
     print(isPalindrome(input()), end=' ')
     print(cnt[0])
+
+# 24060번 ☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+
+# 2447번 ☆☆☆☆☆☆☆☆☆☆☆☆☆
+a = int(input())
+
+def star10(n):
+    if n < 3:
+        return 0
+    if n >= 3:
+        print('***' * int(n/3))
+        print(('*' + ' ' + '*') * int(n/3))
+        print('***' * int(n/3))
+    star10(n-3)
+
+star10(3)
+
+# 11729번 ☆☆☆☆☆☆☆☆☆☆☆☆☆
+a = int(input())
+b = [0]
+def hanoi_tower(n):
+    b[0] += 1
+    if n == 0:
+        return 0
+    
