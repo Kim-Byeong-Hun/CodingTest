@@ -30,3 +30,23 @@ def fibonacci(n):
     return result
 
 print(fibonacci(a))
+
+# 25501번
+t = int(input())
+cnt = [0] # 리스트는 ID가 변하지 않기 때문에 전역변수로 간주됨. 그래서 함수안에서 리스트 값을 변경 가능
+def recursion(s, l, r):
+    cnt[0] += 1
+    if l >= r:
+        return 1
+    elif s[l] != s[r]:
+        return 0
+    else:
+        return recursion(s, l+1, r-1)
+        
+def isPalindrome(s):
+    return recursion(s, 0, len(s)-1)
+
+for i in range(t):
+    cnt = [0]
+    print(isPalindrome(input()), end=' ')
+    print(cnt[0])
