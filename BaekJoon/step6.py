@@ -89,28 +89,22 @@ for i in d:
     e += i
 print(sum(c) + len(e))
 
-# 1316번 ☆☆☆☆☆☆☆☆☆☆☆
-import numpy as np
-
+# 1316번
 a = int(input())
 b = []
 for i in range(a):
     b.append(input())
-o = 0
 for i in b:
     c = []
-    for j in range(len(i)):
-        c.append(i[j])
-    d = np.array(c)
-    e = list(set(c))
-    for v in e:
-        f = np.where(d == v)[0]
-        if len(f) >= 2:
-            y = len(f)
-            while y >= 2:
-                if f[y-1] - f[y-2] == 1:
-                    continue
-                else:
-                    o += 1
-                    break
-                y -= 1
+    d = 0
+    for j in i:
+        if j not in c:
+            c.append(j)
+        else:
+            if c.index(j) == (len(c)-1):
+                continue
+            else:
+                d += 1
+    if d >= 1:
+        a -= 1
+print(a)
