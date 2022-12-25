@@ -37,17 +37,34 @@ def search_fraction(x):
 search_fraction(a)
 
 # 2869번 
+# v = (a-b)*(n-1) + a
+# v = an-bn+b
+# v = (a-b)n+b
 import math
-a,b,v = map(int, input().split())
+A,B,V = map(int, input().split())
+print(math.ceil((V-B)/(A-B)))
 
-day_up = a - b
-all_diff = v - a
+# 10250번
+# 전체호수 =  (N - (H * N/H의 내림):층 * 100) + (N/H의 올림 : 호수)
+import math
+T = int(input())
+for i in range(T):
+    H, W, N = map(int, input().split())
+    print(((N - (H * (math.floor(N/H)))) * 100) + math.ceil(N/H))
 
+# 2775번
+# k층의 n(n<=14)호에는 몇명(a명)살까? 
+# a = (k-1)* + (n~1까지)
 
-if all_diff + a > v:
-    int(math.ceil(v/day_up))
-else:
-    int(math.ceil(v/day_up))
+T = int(input())
+for i in range(T):
+    k = int(input())
+    n = int(input())
+    
+    a = 0
+    a += (k-1) 
+    for i in range(1, n+1):
+        a += i
+    print(a)
 
-
-# 수학적인 사고는 아직 부족하기 때문에 우선 다른 문제 진행하고 수학적으로 막히면 기본수학문제 많이 풀기
+# 1층의 1호부터 b호까지
