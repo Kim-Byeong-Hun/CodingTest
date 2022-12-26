@@ -54,17 +54,33 @@ for i in range(T):
 
 # 2775번
 # k층의 n(n<=14)호에는 몇명(a명)살까? 
-# a = (k-1)* + (n~1까지)
 
 T = int(input())
 for i in range(T):
     k = int(input())
     n = int(input())
-    
-    a = 0
-    a += (k-1) 
-    for i in range(1, n+1):
-        a += i
-    print(a)
 
-# 1층의 1호부터 b호까지
+    f0 = [f for f in range(1, 15)]
+    for j in range(k):
+        fn = []
+        for l in range(n):
+            fn.append(sum(f0[:l+1]))
+        f0 = fn.copy()
+    print(f0[-1])
+
+# 2839번 
+N = int(input())
+count = 0
+while N >= 0:
+    if N % 5 == 0:  # 5의 배수이면
+        count += (N // 5)  # 5로 나눈 몫을 구해야 정수가 됨
+        print(count)
+        break
+    N -= 3  
+    count += 1  # 5의 배수가 될 때까지 설탕-3, 봉지+1
+else:
+    print(-1)
+
+# 10757번
+a,b = map(int, input().split())
+print(a+b)
