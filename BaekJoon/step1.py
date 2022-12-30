@@ -1,5 +1,8 @@
 # 2557번
 print('Hello World!')
+print('Hello World!', end='\n', sep=' ')
+print('Hello', end=' ')
+print('World', '!', sep='')
 
 # 1000번
 a = list(map(int, input().split()))
@@ -36,6 +39,9 @@ print(a-543)
 # 3003번
 a = list(map(int, input().split()))
 print(str(1-a[0])+' '+str(1-a[1])+' '+str(2-a[2])+' '+str(2-a[3])+' '+str(2-a[4])+' '+str(8-a[5]))
+b = [1,1,2,2,2,8]
+for a1,b1 in zip(a,b):
+    print(a1 - b1, end=' ')
 
 # 10430번
 a,b,c = map(int, input().split())
