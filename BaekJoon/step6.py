@@ -51,12 +51,13 @@ print(len(a))
 a = input().split()
 c = []
 for i in a:
-    b = ''
+    b = []
     for j in i:
-        b += j
-    c.extend(b)
-c.reverse()
-print(max([int(c[0]+c[1]+c[2]),int(c[3]+c[4]+c[5])]))
+        b.append(j)
+    b.reverse()
+    c.append(''.join(b))
+print(max([int(c[0]),int(c[1])]))
+
 # -------------------------------------------------------- #
 a = input().split()
 c = []
