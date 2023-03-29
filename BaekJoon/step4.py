@@ -87,3 +87,42 @@ for i in b:
             d += 1
     e = round(d/n * 100, 3)
     print('{:.3f}%'.format(e))
+
+# 10810번
+n, m = map(int, input().split())
+baguni = [0 for _ in range(n)]
+
+for _ in range(m):
+    i, j, k = map(int, input().split())
+    for q in range(i-1, j):
+        baguni[q] = k
+
+for t in baguni:
+    print(t, end=' ')
+
+# 10813번
+n, m = map(int, input().split())
+baguni = [i for i in range(1,n+1)]
+
+for _ in range(m):
+    i, j = map(int, input().split())
+    a = baguni[i-1]
+    b = baguni[j-1]
+    baguni[i-1] = b
+    baguni[j-1] = a
+
+for t in baguni:
+    print(t, end=' ')
+
+# 10811번
+n, m = map(int, input().split())
+baguni = [i for i in range(1,n+1)]
+
+for _ in range(m):
+    i, j = map(int, input().split())
+    a = baguni[i-1:j]
+    a.reverse()
+    baguni[i-1:j] = a
+
+for t in baguni:
+    print(t, end=' ')

@@ -103,3 +103,6 @@ while True:
             b = e
 print(len(c)-1)
 
+# 25314번
+n = int(input())
+print(('long ' * (n//4)) + 'int')

@@ -38,4 +38,24 @@ def hansu(n):
 
 hansu(a)
 
+# 2743번
+a = input()
+print(len(a))
+
+# 9086번
+a = int(input())
+for _ in range(a):
+    text = input()
+    print(text[0], end='')
+    print(text[-1], end='')
+    print()
+
+# 11718번
+while True:
+    try:
+        text = input()
+        print(text)
+    except EOFError:
+        break
+
     
